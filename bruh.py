@@ -2,6 +2,9 @@
 bruh = 'BRUH'
 min_bruh = 'BR'
 
+name_too_short = 'Cannot BRUH-ify. Your name is too short.'
+reduction_finished = 'Cannot be BRUH-ified further.'
+
 #####################################################
 ########## 'BRUH' Conversion Functions ##############
 #####################################################
@@ -34,7 +37,7 @@ def converter(phrase) :
         ## print('BRUH Phrase : ', converted_phrase)
     
     if (converted_phrase == '') :
-        converted_phrase = 'Cannot BRUH-ify. Your name is too short.'
+        converted_phrase = name_too_short
 
     return converted_phrase
 
@@ -73,7 +76,7 @@ def reducer(phrase) :
         ## print('Reduced BRUH Phrase : ', reduced_bruh)
 
     if (reduced_bruh == phrase or bruh_count <= 1) :
-        return_message = 'Cannot be BRUH-ified further.'
+        return_message = reduction_finished 
     else : 
         return_message = reduced_bruh
 
