@@ -19,23 +19,23 @@ def converter(phrase) :
             if (bruh_ready >= len(min_bruh)) :
                 converted_phrase += bruh
             converted_phrase += ' '
-            bruh_ready = 0     
+            bruh_ready = 0
         else :
             ## Increment counter in almost every case (other than when encountering ' ' character).
             bruh_ready += 1
             ## Reinitialize counter and append BRUH after every four letters.
-            if (bruh_ready == len(bruh)) :   
+            if (bruh_ready == len(bruh)) :
                 bruh_ready = 0
-                converted_phrase += bruh 
-            ## Append BRUH at end of phrase if at least two additional letters at end of word.     
+                converted_phrase += bruh
+            ## Append BRUH at end of phrase if at least two additional letters at end of word.
             elif ((character == (len(phrase)-1)) and (bruh_ready >= len(min_bruh))) :
                 converted_phrase += bruh
 
         ## The following lines have been commented out. -> Used for debugging loop in custom function.
-        ## print('Phrase Character : ', phrase[character])        
+        ## print('Phrase Character : ', phrase[character])
         ## print('BRUH Ready : ', bruh_ready)
         ## print('BRUH Phrase : ', converted_phrase)
-    
+
     if (converted_phrase == '') :
         converted_phrase = name_too_short
 
@@ -45,7 +45,7 @@ def reducer(phrase) :
     reduced_bruh = ''
     bruh_count = 0
     bruh_index = 0
-        
+
     for character in range(len(phrase)) :
         if (phrase[character] == ' ') :
             bruh_index = 0
@@ -58,10 +58,10 @@ def reducer(phrase) :
             bruh_index += 1
 
         ## The following lines have been commented out. -> Used for debugging loop in custom function.
-        ## print('Phrase Character : ' , phrase[character])        
+        ## print('Phrase Character : ' , phrase[character])
         ## print('BRUH Index : ', bruh_index)
         ## print('BRUH Count : ', bruh_count)
-    
+
     for counter in range(1, bruh_count + 1, 1) :
         ## Append BRUH after every four BRUHs.
         if (counter % len(bruh) == 0) :
@@ -72,12 +72,12 @@ def reducer(phrase) :
                 reduced_bruh += bruh
 
         ## The following lines have been commented out. -> Used for debugging loop in custom function.
-        ## print('Counter : ' , counter)        
+        ## print('Counter : ' , counter)
         ## print('Reduced BRUH Phrase : ', reduced_bruh)
 
     if (reduced_bruh == phrase or bruh_count <= 1) :
-        return_message = reduction_finished 
-    else : 
+        return_message = reduction_finished
+    else :
         return_message = reduced_bruh
 
     return return_message
